@@ -1,0 +1,7 @@
+@import './vars';
+
+@mixin tablet {
+	@media (min-width: #{$screen-sm-min}) {
+		@content;
+	}
+}

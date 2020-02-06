@@ -1,0 +1,25 @@
+@import "./../../styles/vars";
+@import "./../../styles/mixins";
+
+.show__header {
+	border-bottom: 1px solid pink;
+}
+
+.show__title,
+.episodes__title {
+	color: deeppink;
+}
+
+@include tablet {
+	.show__main {
+		display: flex;
+		margin: 0 #{$gutter-size * -1};
+	}
+
+	.show__description,
+	.show__image {
+		margin: $gutter-size;
+		flex-basis: 50%;
+	}
+}
+
