@@ -4,7 +4,7 @@ import axios from '../../axios';
 
 const EPISODE_LIST_LIMIT = 10;
 
-interface IMazeEpisode {
+export interface IMazeEpisode {
     id: string;
     name: string;
     summary: string;

@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Techniques
+- React: with TypeScript template
+- Styling: SASS, BEM, mobile-first
+- State management: Redux and redux-saga's
+- Data flow: React container pattern
+- Routing, error handling and spinner with HOC-pattern
+
+## Prerequisit
+Node version 12.10.0 or higher
+
 ## Installation
 
 1) Clone the repository:<br />
@@ -22,7 +32,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `npm test`
 
-Due to time constrains only 2 very basic tests were written.
+Due to time constrains only a few basic tests were written.
 
 ### `npm run build`
 
