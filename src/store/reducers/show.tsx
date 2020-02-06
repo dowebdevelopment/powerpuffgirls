@@ -5,7 +5,17 @@ export interface IShowState {
     isLoading: boolean;
     title: string;
     description: string;
-    imagePath: string ;
+    imagePath: string;
+    episodes: IEpisodeState[];
+}
+
+export interface IEpisodeState {
+    id: number;
+    title: string;
+    description: string;
+    imagePath: string;
+    season: number;
+    number: number;
 }
 
 const initialState: IShowState = {
@@ -13,6 +23,7 @@ const initialState: IShowState = {
     imagePath: '',
     description: '',
     title: '',
+    episodes: [],
 };
 
 const loadShow = (state: IShowState): IShowState => {

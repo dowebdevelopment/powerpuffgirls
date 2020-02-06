@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import './EpisodeList.scss';
-import { IEpisodeState } from '../../store/reducers/episodes';
+import { IEpisodeState } from '../../store/reducers/show';
 
 interface IEpisodeListProps {
     episodes: IEpisodeState[];

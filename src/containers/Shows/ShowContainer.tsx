@@ -5,7 +5,6 @@ import { Dispatch } from 'redux';
 import withSpinner from '../../hoc/WithSpinner/WithSpinner';
 import Show, { IShow } from '../../components/Shows/Show';
 import { RouteComponentProps } from 'react-router-dom';
-import { IEpisode } from '../../components/Episodes/Episode';
 
 const ShowWithSpinner = withSpinner(Show);
 
@@ -16,8 +15,6 @@ interface MatchParams {
 export interface IShowContainerProps extends IShow, RouteComponentProps<MatchParams> {
     loadShow: (showId: number) => Dispatch;
     isLoading: boolean;
-    isLoadingEpisodes: boolean;
-    episodes: IEpisode[];
 }
 
 class ShowContainer extends Component<IShowContainerProps> {
@@ -29,7 +26,6 @@ class ShowContainer extends Component<IShowContainerProps> {
         return (
             <ShowWithSpinner
                 isLoading={this.props.isLoading}
-                isLoadingEpisodes={this.props.isLoadingEpisodes}
                 title={this.props.title}
                 description={this.props.description}
                 imagePath={this.props.imagePath}
@@ -44,9 +40,7 @@ class ShowContainer extends Component<IShowContainerProps> {
 const mapStateToProps = (state: any) => {
     return {
         ...state.show,
-        episodes: state.episodes.list,
         isLoading: state.show.isLoading,
-        isLoadingEpisodes: state.episodes.isLoading
     };
 };
 

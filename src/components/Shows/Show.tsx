@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
 import EpisodeList from '../Episodes/EpisodeList';
-import withSpinner from '../../hoc/WithSpinner/WithSpinner';
 import striptags from 'striptags';
-import { IEpisode } from '../Episodes/Episode';
 import './Shows.scss';
-
-const EpisodeListWithSpinner = withSpinner(EpisodeList);
+import { IEpisodeState } from '../../store/reducers/show';
 
 export interface IShow {
     title: string;
     description: string;
     imagePath: string;
+    episodes: IEpisodeState[];
 }
 
 export interface IShowProps extends IShow {
-    isLoadingEpisodes: boolean;
-    episodes: IEpisode[];
 }
 
 class Show extends Component<IShowProps> {
@@ -38,11 +34,8 @@ class Show extends Component<IShowProps> {
                 </main>
 
                 <section className="episodes">
-                    <h2 className="episodes__title">Episodes</h2>
-                    <EpisodeListWithSpinner
-                        isLoading={this.props.isLoadingEpisodes}
-                        episodes={this.props.episodes}>
-                    </EpisodeListWithSpinner>
+                    <h2 className="episodes__title">First {this.props.episodes.length} episodes</h2>
+                    <EpisodeList episodes={this.props.episodes}/>
                 </section>
             </div>
         );
